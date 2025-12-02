@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>E-Modul: Trainer PLC & Elektro-Pneumatik</title>
+  <meta name="description" content="E-modul sederhana untuk praktik trainer PLC dan sistem elektro-pneumatik — ringkas, interaktif, dan mobile-friendly." />
+  <style>
+    /* Canva-style: clean, soft, round, pastel */
+    :root{
+      --accent:#4b8bff;
+      --accent-light:#e9f0ff;
+      --bg:#fdfdfd;
+      --card:#ffffff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --radius:22px;
+      --shadow:0 10px 24px rgba(0,0,0,0.06);
+    }
+    *{box-sizing:border-box}
+    body{
+      font-family:'Inter', system-ui;
+      background:var(--bg);
+      margin:0;
+      color:var(--text);
+    }
+    .container{max-width:1080px;margin:32px auto;padding:20px}
+    header{display:flex;gap:20px;align-items:center}
+    .logo{
+      width:72px;height:72px;border-radius:var(--radius);
+      background:linear-gradient(135deg,var(--accent),#74a7ff);
+      box-shadow:var(--shadow);
+      display:flex;align-items:center;justify-content:center;
+      color:white;font-weight:700;font-size:20px;
+    }
+    h1{margin:0;font-size:28px;font-weight:700}
+    p.lead{color:var(--muted);margin-top:6px;font-size:15px}
+    nav{margin:25px 0;display:flex;gap:10px;flex-wrap:wrap}
+    nav a{
+      padding:10px 16px;
+      background:var(--accent-light);
+      color:var(--accent);
+      border-radius:var(--radius);
+      text-decoration:none;
+      font-weight:600;
+      transition:0.2s;
+    }
+    nav a:hover{background:var(--accent);color:white}
+    .grid{display:grid;grid-template-columns:1fr;gap:20px}
+    .card{
+      background:var(--card);
+      padding:24px;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .two{display:grid;grid-template-columns:1fr 340px;gap:20px}
+    @media(max-width:900px){.two{grid-template-columns:1fr}}
+    h2{margin:0 0 12px;font-size:22px;font-weight:700}
+    .diagram{
+      width:100%;height:220px;
+      background:var(--accent-light);
+      border-radius:var(--radius);
+      display:flex;align-items:center;justify-content:center;
+      color:var(--muted);
+      border:2px dashed rgba(75,139,255,0.3);
+      font-size:14px
+    }
+    .btn{
+      display:inline-block;
+      padding:12px 18px;
+      border-radius:var(--radius);
+      background:var(--accent);
+      color:white;text-decoration:none;font-weight:700;
+      box-shadow:var(--shadow);
+    }
+    .worksheet table{width:100%;border-collapse:collapse;margin-top:12px;border-radius:var(--radius);overflow:hidden}
+    .worksheet td,.worksheet th{border:1px solid #ddd;padding:10px;background:white}
+    .quiz button{margin-top:12px}
+    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">PLC</div>
+      <div>
+        <h1>E‑Modul: Trainer PLC & Elektro‑Pneumatik</h1>
+        <p class="lead">Modul interaktif singkat untuk praktik mandiri menggunakan trainer PLC — berisi tutorial, lembar kerja, simulasi kecil, dan kuis.</p>
+      </div>
+    </header>
+
+    <nav>
+      <a href="#overview">Overview</a>
+      <a href="#trainer">Trainer</a>
+      <a href="#praktikum">Praktikum</a>
+      <a href="#worksheet">Lembar Kerja</a>
+      <a href="#quiz">Kuis</a>
+      <a href="#resources">Resources</a>
+    </nav>
+
+    <main class="grid">
+
+      <section id="overview" class="card">
+        <div class="topbar">
+          <div>
+            <h2>Ringkasan Modul</h2>
+            <div class="small muted">Level: XII Teknik Elektronika Industri • Durasi praktik: 3–4 jam</div>
+          </div>
+          <div>
+            <a class="btn" id="downloadPdf">Download PDF</a>
+          </div>
+        </div>
+
+        <p class="muted">Tujuan: setelah menyelesaikan modul ini siswa dapat merancang program PLC sederhana, menghubungkan I/O trainer, menjalankan kontrol elektro‑pneumatik, dan memantau via HMI sederhana.</p>
+
+        <div style="margin-top:12px">
+          <strong>Kompetensi yang dicapai</strong>
+          <ul>
+            <li>Mendesain program PLC untuk ON/OFF actuator</li>
+            <li>Menghubungkan wiring I/O trainer</li>
+            <li>Mengoperasikan HMI dasar dan monitoring</li>
+            <li>Menerapkan SOP keselamatan praktikum</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="two">
+        <div class="card" id="trainer">
+          <h2>Pelajari Trainer</h2>
+          <p class="muted">Gambaran singkat unit trainer dan fungsi setiap komponen.</p>
+          <div class="diagram">[Gambar/Foto Trainer — ganti dengan gambar nyata]</div>
+
+          <h3 style="margin-top:12px">Bagian penting</h3>
+          <ul>
+            <li>Power supply & indikator</li>
+            <li>Terminal input (sensor, tombol)</li>
+            <li>Terminal output (solenoid valve, lampu)</li>
+            <li>Port komunikasi untuk HMI / IoT</li>
+          </ul>
+
+          <h3 style="margin-top:12px">SOP singkat</h3>
+          <ol>
+            <li>Pastikan power OFF saat wiring</li>
+            <li>Cek polaritas dan konektor</li>
+            <li>Nyalakan power, lakukan pemeriksaan awal</li>
+            <li>Jalankan program uji sederhana</li>
+          </ol>
+        </div>
+
+        <aside class="card">
+          <h3>Video Demo</h3>
+          <div style="background:#000;border-radius:8px;overflow:hidden">
+            <!-- Replace the src with your video link or embed -->
+            <video controls width="100%" poster="" style="display:block">
+              <source src="" type="video/mp4">
+              Video demo belum ditambahkan. Ganti atribut src dengan file video (.mp4) atau embed YouTube.
+            </video>
+          </div>
+
+          <h3 style="margin-top:12px">Quick Links</h3>
+          <div class="small">
+            <div class="muted">Download:</div>
+            <a href="#" class="small">Skema wiring (PDF)</a><br>
+            <a href="#" class="small">Form Lembar Praktik (Excel)</a>
+          </div>
+        </aside>
+      </section>
+
+      <section id="praktikum" class="card steps">
+        <h2>Praktikum: Contoh 1 — ON/OFF Solenoid</h2>
+        <p class="muted">Durasi: 30–45 menit</p>
+        <h3>Alat & Bahan</h3>
+        <ul>
+          <li>Trainer PLC</li>
+          <li>Kabel jumper</li>
+          <li>Solenoid valve (1)</li>
+          <li>Push button dan sensor</li>
+        </ul>
+
+        <h3>Langkah-langkah</h3>
+        <ol>
+          <li>Matikan power. Sambungkan input tombol ke I0 dan output solenoid ke Q0.</li>
+          <li>Nyalakan power. Buka software PLC dan hubungkan ke trainer.</li>
+          <li>Tulis program: jika tombol ditekan maka Q0 = 1.</li>
+          <li>Download program ke PLC, jalankan mode RUN.</li>
+          <li>Amati aksi solenoid. Catat waktu respons dan masalah jika ada.</li>
+        </ol>
+
+        <h3>Pengukuran & Laporan</h3>
+        <p class="muted">Isi Lembar Kerja: waktu ON/OFF, kesalahan wiring, dan refleksi perbaikan.</p>
+      </section>
+
+      <section id="worksheet" class="card worksheet">
+        <h2>Lembar Kerja Praktik (Contoh)</h2>
+        <table>
+          <tr><th>No</th><th>Parameter</th><th>Hasil / Catatan</th></tr>
+          <tr><td>1</td><td>Waktu respons (ms)</td><td></td></tr>
+          <tr><td>2</td><td>Status I0 saat idle</td><td></td></tr>
+          <tr><td>3</td><td>Masalah yang ditemui</td><td></td></tr>
+          <tr><td>4</td><td>Perbaikan yang dilakukan</td><td></td></tr>
+        </table>
+        <p style="margin-top:10px"><strong>Instruksi:</strong> Salin tabel ini ke catatan praktikummu lalu isi selama praktik berlangsung.</p>
+      </section>
+
+      <section id="quiz" class="card quiz">
+        <h2>Kuis Singkat</h2>
+        <div class="q" id="q1">
+          <div><strong>1.</strong> Apa singkatan dari PLC?</div>
+          <label><input type="radio" name="q1" value="a"> Programmable Logic Controller</label><br>
+          <label><input type="radio" name="q1" value="b"> Power Load Circuit</label>
+        </div>
+
+        <div class="q" id="q2">
+          <div><strong>2.</strong> Terminal output PLC biasanya untuk?</div>
+          <label><input type="radio" name="q2" value="a"> Sensor</label><br>
+          <label><input type="radio" name="q2" value="b"> Aktuator (mis. solenoid)</label>
+        </div>
+
+        <button class="btn" id="submitQuiz">Kirim Jawaban</button>
+        <div id="quizResult" style="margin-top:10px"></div>
+      </section>
+
+      <section id="resources" class="card">
+        <h2>Resources & Pengembangan</h2>
+        <ul>
+          <li>Link ke manual PLC (ganti dengan link resmi vendor)</li>
+          <li>Folder contoh program (copy ke flashdisk setiap kelompok)</li>
+          <li>Video troubleshooting singkat</li>
+        </ul>
+
+        <h3 style="margin-top:8px">Export & Print</h3>
+        <p class="muted">Untuk membuat versi offline: buka halaman ini di browser → Print → Save as PDF. Atau gunakan tombol "Download PDF" di atas jika sudah digenerate di server.</p>
+
+        <h3 style="margin-top:8px">Catatan untuk guru</h3>
+        <ul>
+          <li>Sesuaikan soal kuis dan lembar kerja dengan KD kelas.</li>
+          <li>Tambahkan rubrik penilaian praktikum di bagian teacher notes.</li>
+        </ul>
+      </section>
+
+    </main>
+
+    <footer>
+      Dibuat oleh: Davin Fauzan • Versi: 1.0 • Template HTML sederhana — ganti konten gambar/video dengan aset nyata trainer.
+    </footer>
+  </div>
+
+  <script>
+    // Simple quiz logic
+    document.getElementById('submitQuiz').addEventListener('click', function(){
+      const a1 = document.querySelector('input[name=q1]:checked');
+      const a2 = document.querySelector('input[name=q2]:checked');
+      let score = 0;
+      if(a1 && a1.value==='a') score += 1;
+      if(a2 && a2.value==='b') score += 1;
+      const out = document.getElementById('quizResult');
+      out.innerHTML = '<strong>Hasil:</strong> '+score+' / 2';
+      if(score<2) out.innerHTML += '<div class="muted">Coba ulang atau baca ulang bagian trainer & praktikum.</div>';
+    });
+
+    // Download PDF (client-side suggestion)
+    document.getElementById('downloadPdf').addEventListener('click', function(){
+      alert('Untuk export ke PDF: buka menu Print di browser dan pilih "Save as PDF". Jika mau, saya bisa bantu buatkan versi PDF siap cetak.');
+    });
+
+    // Small helpers: smooth scroll for nav
+    document.querySelectorAll('nav a').forEach(a=>{
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        const id = this.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+      });
+    });
+  </script>
+</body>
+</html>
